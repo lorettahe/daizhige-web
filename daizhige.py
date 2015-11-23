@@ -7,6 +7,11 @@ import urllib.request
 import urllib.parse
 import json
 
+class Breadcrumb(object):
+    def __init__(self, name, path):
+        self.name = name
+        self.path = path
+
 class Pagination(object):
     
     def __init__(self, page, page_numbers, total_count, no_of_pages):
@@ -74,6 +79,15 @@ def get_page_numbers(page_no, total_num_pages):
         page_numbers = list(range(page_no-2, page_no+3))
     return page_numbers
 
+def get_bread_crumbs(path):
+    path_parts = path.split("/")
+    bread_crumbs = [Breadcrumb("殆知阁", "/")]
+    current_path = ""
+    for path_part in path_parts:
+        current_path = current_path + "/" +  path_part
+        bread_crumbs.append(Breadcrumb(path_part, current_path))
+    return bread_crumbs
+
 @app.route("/<path:path>", methods=['GET'])
 def category(path=None):
     if path.endswith(".txt"):
@@ -87,7 +101,8 @@ def category(path=None):
     total_num_pages = ceil(len(list_items) / 10)
     page_numbers = get_page_numbers(page_no, total_num_pages)
     pagination = Pagination(page_no, page_numbers, len(list_items), total_num_pages)
-    return render_template("lists.html", title=path, categories = categories, files=result_list, category = path, pagination = pagination)
+    breadcrumbs = get_bread_crumbs(path)
+    return render_template("lists.html", title=path, categories = categories, files=result_list, category = path, pagination = pagination, breadcrumbs = breadcrumbs)
 
 def combine_search(search_token):
     return "".join(["+"+c for c in search_token])

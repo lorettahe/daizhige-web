@@ -8,6 +8,56 @@
 
 body {
     background-color: #EFEBDF;
+    color: #aa3311;
+}
+
+.breadcrumb {
+    background-color: #EFEBDF;
+    font-size: 130%;
+}
+
+a {
+    color: #aa3311;
+}
+
+a:hover,
+a:focus {
+    border: 0px;
+    color: #fff;
+    background-color: #aa3311;
+}
+
+.btn-default {
+    border: 1px solid #aa3311;
+    color: #aa3311;    
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    border: 1px solid #aa3311;
+    outline: 0;
+    color: #fff;
+    background-color: #aa3311;
+}
+
+.btn-circle {
+    border: 2px solid #aa3311;
+    color: #aa3311;
+}
+
+.btn-circle:hover,
+.btn-circle:focus {
+    outline: 0;
+    color: #fff;
+    background: #aa3311;
+}
+
+.intro .btn-circle:hover,
+.intro .btn-circle:focus {
+    border: 1px solid #fff;
+    outline: 0;
+    color: #aa3311;
+    background: #fff;
 }
 
 .center-block {
@@ -27,4 +77,10 @@ body {
 
 .intro {
     background: url("/static/images/bg.jpg") no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.nav li {
+    font-size:130%;
 }
