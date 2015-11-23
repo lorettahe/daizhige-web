@@ -84,3 +84,31 @@ a:focus {
 .nav li {
     font-size:130%;
 }
+
+.pagination>li>a,
+.pagination>li>span {
+    color: #aa3311;
+    background-color: #EFEBDF;
+    border: 1px solid #aa3311;
+}
+
+.pagination>li>a:hover,
+.pagination>li>a:focus {
+    color: #fff;
+    background-color: #aa3311;
+    border: 1px solid #aa3311;
+}
+
+.pagination>.active>a {
+    color: #fff;
+    background-color: #aa3311;
+    border: 1px solid #aa3311;
+}
+
+.pagination>.disabled>a,
+.pagination>.disabled>a:focus,
+.pagination>.disabled>a:hover {
+    color: #aa3311;
+    background-color: #EFEBDF;
+    border: 1px solid #aa3311;
+}
