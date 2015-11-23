@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    {% autoescape false %}
+    {{ content }}
+    {% endautoescape %}
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	<title>{{ title }}</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<!--<link href="/static/css/bootstrap-theme.min.css" rel="stylesheet">-->
+	<link href="/static/css/grayscale.css" rel="stylesheet">
+	<link href="/static/css/font-awesome.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link rel="icon" href="/static/images/logo.jpeg">
+	<script src="/static/js/jquery.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/jquery.easing.min.js"</script>	
+	<script src="/static/js/grayscale.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar-fixed-top" id="page-top">
+	<nav class="navbar navbar-fixed-top navbar-custom" id="top" role="navigation">
+	    <div class="container">
+                    <form class="navbar-form navbar-right" role="search" action="/search" method="get">
+			<div class="input-group">
+		            <input type="text" class="form-control" name="terms" placeholder="搜索">
+	                    <span class="input-group-btn">
+				<button class="btn btn-default" type="submit">
+				    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</button>
+			    </span>
+			</div>
+		</form>
+		</li>
+	</ul>
+		 </div>
+             </div>
+	 </nav>
+	 {% block content %}
+	 <header class="intro">
+	     <div class="intro-body">
+		 <div class="container">
+                     <div class="row">
+			 <div class="col-md-8 col-md-offset-2">
+			    <h1 class="brand-heading">殆知阁</h1>
+			    <p class="intro-text">
+			        开放公益性
+				<br>
+				中文古藉资料站
+				</p>
+				<a href="#about" class="btn btn-circle page-scroll">
+					<i class="fa fa-angle-double-down animated"></i>
+			    </a>
+		<footer class="footer">
+		<p class="text-muted">殆知阁藏书 计一万三千部 十万卷 十三亿汉字 所有资料收集自因特网络，供同好者共享阅读检索。本站为普及传统文化个人独自整理纯粹公益运作，不保留任何权益也不意赚取任何利益。文献浩如烟海，恕难一一仔细核对，若有达人方家认为侵犯了您的相关知识产权，也请告知为盼。  </p></footer>
+	 {% endblock %}
+     </body>
+</html>
+	
+

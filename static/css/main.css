@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/static/fonts/fontawesome-webfont.eot?v=4.2.0');
+    src: url('/static/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('/static/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('/static/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('/static/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #EFEBDF;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  color: #767676;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.intro {
+    background: url("/static/images/bg.jpg") no-repeat bottom center scroll;
+}

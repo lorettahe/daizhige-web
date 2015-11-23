@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+	<h2>{{ category }} 共有{{ pagination.total_count }}个结果，{{ pagination.no_of_pages }}页</h2>
+    <table class="table">
+	<thead>
+            <tr><th>子类/文名</th></tr>
+        </thead>
+        <tbody>
+	    {% for file in files %}
+	    <tr><td><a href="/{{ file.path }}">{{ file.name }}</a></td></tr>
+	    {% endfor %}
+	</tbody>
+    </table>
+    <div class="center-block text-center">
+        <ul class="pagination">
+		<li {% if pagination.not_has_prev %}class="disabled"{% endif %}><a href="{{ url_for_other_page(pagination.page-1) }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+		{% for n in pagination.page_numbers %}
+		{% if pagination.page == n %}
+		<li class="active"><a href="#">{{ n }} <span class="sr-only">(current)</span></a></li>
+		{% else %}
+		<li><a href="{{ url_for_other_page(n) }}">{{ n }}</a></li>
+                {% endif %}
+		{% endfor %}
+	        <li {% if pagination.not_has_next %}class="disabled"{% endif %}><a href="{{ url_for_other_page(pagination.page+1) }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+	</ul>
+    </div>
+                
+</div>
+{% endblock %}
