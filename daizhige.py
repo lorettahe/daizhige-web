@@ -40,7 +40,7 @@ app.jinja_env.globals['url_for_other_page'] = url_for_other_page
 @app.route("/")
 def index():
     dirs = listdir("../daizhige-data")
-    title = "殆知阁"
+    title = u"殆知阁"
     return render_template("index.html", title=title, categories=dirs)
 
 def article(path):
@@ -61,7 +61,7 @@ def article(path):
 
 def get_bread_crumbs(path):
     path_parts = path.split("/")
-    bread_crumbs = [Breadcrumb("殆知阁", "/")]
+    bread_crumbs = [Breadcrumb(u"殆知阁", "/")]
     current_path = ""
     for path_part in path_parts:
         current_path = current_path + "/" +  path_part
@@ -104,7 +104,7 @@ def search():
 @app.route("/contact")
 def contact():
     categories = listdir("../daizhige-data")
-    return render_template("contact.html", title="联系站长", categories = categories)
+    return render_template("contact.html", title=u"联系站长", categories = categories)
 
 if __name__ == "__main__":
     app.run(debug=True)
