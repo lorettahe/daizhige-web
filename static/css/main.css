@@ -11,6 +11,10 @@ body {
     color: #aa3311;
 }
 
+.data {
+    font-size: 120%;
+}
+
 .breadcrumb {
     background-color: #EFEBDF;
     font-size: 130%;

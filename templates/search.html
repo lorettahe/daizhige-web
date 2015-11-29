@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% block data %}
+    <div class="container data" style="padding-top: 50px;">
+        <div>
+            <form role="search" action="/search" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="terms" placeholder="{{ terms }}">
+                                <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </button>
+                        </span>
+                </div>
+            </form>
+        </div>
+        <br/>
+        <h3>搜索项: {{ terms }}, 共有{{ pagination.total_count }}个结果, {{ pagination.no_of_pages }}页</h3>
+        {% for item in list_items %}
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div style="font-size:130%;"><a href="{{ item.path }}">{{ item.title }}</a></div>
+                </div>
+                <div class="panel-body">
+                    {{ item.highlight|safe }}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="center-block text-center">
+            <ul class="pagination">
+                <li {% if pagination.not_has_prev %}class="disabled"{% endif %}><a href="{{ url_for_other_page(pagination.page-1) }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                {% for n in pagination.page_numbers %}
+                    {% if pagination.page == n %}
+                        <li class="active"><a href="#">{{ n }} <span class="sr-only">(current)</span></a></li>
+                    {% else %}
+                        <li><a href="{{ url_for_other_page(n) }}">{{ n }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <li {% if pagination.not_has_next %}class="disabled"{% endif %}><a href="{{ url_for_other_page(pagination.page+1) }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
